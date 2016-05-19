@@ -230,7 +230,7 @@ void scaner()//词法识别
             case'(':syn = 27; token[0] = ch; break;
             case')':syn = 28; token[0] = ch; break;
             case'\t':syn = 30; break;
-            case'\n':syn = 30; haveEnter = true;  lines++; break;
+            case'\n':syn = 31; haveEnter = true;  lines++; break;
             case' ':syn = 30; break;//这三个都是不需要处理的字符，直接跳过就可以，在之后可使用syn是否为30判断是不是有效字符
             case'#':syn = 0; token[0] = ch; break;
             default:syn = -1;
@@ -354,13 +354,10 @@ void output() {
                 break;
             }
             }*/
-            //FILE *fp;
-            //printf("请输入文件路径\n");
-            //scanf("%s", filename);
-            statusFile = 1 ;
-            printf("已输出至项目文件夹中的output.txt");
-            freopen("/Users/Shu/ClionProjects/LightCompiler/output.txt", "w+", stdout);
-
+            FILE *fp;
+            printf("请输入文件路径\n");
+            scanf("%s", filename);
+            freopen("filename", "a+", stdout);
             p = 0;
             do
             {

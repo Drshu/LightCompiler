@@ -18,3 +18,4 @@ void termAnalysis();
 void firstScaner();
 void secondScaner();
 void jugdeAnalysis();
+void secondScanerFix();
